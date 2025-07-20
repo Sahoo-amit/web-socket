@@ -15,6 +15,8 @@ app.use(cors({
     origin: process.env.FRONTEND_URL,
     credentials: true
 }))
+app.options("*", cors()); 
+
 app.use('/api/user',userRouter)
 app.use('/api/auth',authRouter)
 app.use('/api/message',messageRoute)
