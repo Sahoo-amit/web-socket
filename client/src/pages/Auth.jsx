@@ -26,7 +26,7 @@ const Auth = () => {
     const val = isLogin ? "login" : "register";
     try {
       const res = await fetch(
-        `https://web-socket-t9z8.vercel.app/api/auth/${val}`,
+        `https://web-socket-vfg3.vercel.app/api/auth/${val}`,
         {
           method: "POST",
           headers: {
