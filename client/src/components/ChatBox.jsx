@@ -19,7 +19,7 @@ const ChatBox = () => {
     if (!currentUser) return;
     try {
       const res = await fetch(
-        `http://localhost:3000/api/message/${currentUser?._id}`,
+        `https://web-socket-t9z8.vercel.app/api/message/${currentUser?._id}`,
         {
           method: "GET",
           headers: {
@@ -43,7 +43,7 @@ const ChatBox = () => {
       return;
     }
     try {
-      await fetch(`http://localhost:3000/api/message/send`, {
+      await fetch(`https://web-socket-t9z8.vercel.app/api/message/send`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

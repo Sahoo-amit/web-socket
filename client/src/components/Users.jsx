@@ -11,13 +11,16 @@ const Users = () => {
 
   const getAllUser = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/api/user/${id}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await fetch(
+        `https://web-socket-t9z8.vercel.app/api/user/${id}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       const data = await res.json();
       setUsers(data);
     } catch (error) {

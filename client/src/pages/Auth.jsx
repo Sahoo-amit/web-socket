@@ -25,13 +25,16 @@ const Auth = () => {
     setIsLoading(true);
     const val = isLogin ? "login" : "register";
     try {
-      const res = await fetch(`http://localhost:3000/api/auth/${val}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(user),
-      });
+      const res = await fetch(
+        `https://web-socket-t9z8.vercel.app/api/auth/${val}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(user),
+        }
+      );
       const data = await res.json();
       if (res.ok) {
         toast.success(data.msg);
